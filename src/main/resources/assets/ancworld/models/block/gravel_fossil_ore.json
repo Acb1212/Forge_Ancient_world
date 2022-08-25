@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "ancworld:block/gravel_fossil_ore"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ancworld:block/sandstone_fossil_ore_bottom",
+    "side": "ancworld:block/sandstone_fossil_ore_side",
+    "top": "ancworld:block/sandstone_fossil_ore_top"
+  }
+}

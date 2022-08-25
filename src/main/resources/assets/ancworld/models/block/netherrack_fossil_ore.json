@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "ancworld:block/netherrack_fossil_ore"
+  }
+}

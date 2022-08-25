@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "ancworld:block/dna_cultivator_side_ph",
+    "top": "ancworld:block/dna_cultivator_top_ph",
+    "bottom": "ancworld:block/dna_cultivator_bot_ph"
+  }
+}

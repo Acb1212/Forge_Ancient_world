@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "ancworld:block/warp_wheat_stage6"
+  }
+}

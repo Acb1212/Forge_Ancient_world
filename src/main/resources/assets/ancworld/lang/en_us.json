@@ -1,0 +1,36 @@
+{
+  "item.ancworld.amber": "Amber",
+  "item.ancworld.sandstone_fossil": "Sandstone Fossil",
+  "item.ancworld.sandstone_raw_fossil": "Raw Sandstone Fossil",
+  "item.ancworld.endstone_raw_fossil": "Raw End Stone Fossil",
+  "item.ancworld.endstone_fossil": "End Stone Fossil",
+  "item.ancworld.netherrack_raw_fossil": "Raw Netherrack Fossil",
+  "item.ancworld.netherrack_fossil": "Netherrack Fossil",
+  "item.ancworld.nutrient_soup": "Nutrient Soup",
+  "item.ancworld.warp_wheat_seeds": "Warp Wheat Seeds",
+  "item.ancworld.warp_wheat": "Warp Wheat",
+
+  "item.ancworld.dna_modern": "Unidentified Modern DNA",
+  "item.ancworld.dna_iceage": "Unidentified Iceage DNA",
+  "item.ancworld.dna_jurassic": "Unidentified Jurassic DNA",
+  "item.ancworld.dna_triassic": "Unidentified Triassic DNA",
+  "item.ancworld.dna_cretaceous": "Unidentified Cretaceous DNA",
+  "item.ancworld.dna_paleolithic": "Unidentified Paleolithic DNA",
+  "item.ancworld.dna_ender": "Unidentified Ender DNA",
+  "item.ancworld.dna_nether": "Unidentified Nether DNA",
+
+  "block.ancworld.sandstone_fossil_ore": "Sandstone Fossil Ore",
+  "block.ancworld.gravel_fossil_ore": "Gravel Fossil Ore",
+  "block.ancworld.endstone_fossil_ore": "Endstone Fossil Ore",
+  "block.ancworld.netherrack_fossil_ore": "Netherrack Fossil Ore",
+  "block.ancworld.amber_ore": "Amber Ore",
+  "block.ancworld.polished_diorite_bricks": "Polished Diorite Bricks",
+  "block.ancworld.fossil_extractor": "Fossil Extraction Workbench",
+ "block.ancworld.dna_cultivator": "DNA Cultivator",
+  "block.ancworld.glacial_fossil_ore":"Glacial Fossil Ore",
+
+
+  "itemGroup.fossils_tab": "AW Fossils",
+  "itemGroup.dna_tab": "AW DNA",
+  "itemGroup.misc_tab":  "AW Miscellaneous"
+}

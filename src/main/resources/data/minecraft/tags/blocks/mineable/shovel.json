@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+  "ancworld:tar_block",
+    "ancworld:gravel_fossil_ore"
+  ]
+
+}

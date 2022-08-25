@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_hot",
+  "features": "ancworld:sandstone_fossil_ore_placed",
+  "step": "underground_ores"
+}

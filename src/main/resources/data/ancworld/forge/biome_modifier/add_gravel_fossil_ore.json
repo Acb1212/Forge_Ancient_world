@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_water",
+  "features": "ancworld:gravel_fossil_ore_placed",
+  "step": "underground_ores"
+}

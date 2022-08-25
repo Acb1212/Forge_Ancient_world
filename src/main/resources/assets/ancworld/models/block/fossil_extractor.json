@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "ancworld:block/fossil_extraction_table_side",
+    "top": "ancworld:block/fossil_extraction_table_top",
+    "bottom": "ancworld:block/fossil_extraction_table_bottom"
+  }
+}

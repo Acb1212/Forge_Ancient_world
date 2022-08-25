@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+  "ancworld:amber_ore",
+    "ancworld:sandstone_fossil_ore",
+    "ancworld:endstone_fossil_ore",
+    "ancworld:netherrack_fossil_ore"
+  ]
+
+}
