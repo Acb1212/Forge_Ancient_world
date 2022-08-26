@@ -13,6 +13,9 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.Nullable;
 
+
+
+
 public class FossilExtractorMenu extends AbstractContainerMenu {
     public final FossilExtractorBlockEntity blockEntity;
     private final Level level;
@@ -38,6 +41,7 @@ public class FossilExtractorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler,0,19,21));
             this.addSlot(new SlotItemHandler(handler,1,49,34));
             this.addSlot(new SlotItemHandler(handler,2,109,34));
+            this.addSlot(new SlotItemHandler(handler,3,139,34));
         });
 
         addDataSlots(data);
@@ -73,7 +77,7 @@ public class FossilExtractorMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
@@ -114,6 +118,8 @@ public class FossilExtractorMenu extends AbstractContainerMenu {
         return stillValid(ContainerLevelAccess.create(level,blockEntity.getBlockPos()), player, ModBlocks.FOSSIL_EXTRACTOR.get());
     }
 
+
+    //i is the # of rows, l is the number of columns
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l<9; l++) {

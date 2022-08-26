@@ -37,7 +37,7 @@ import static java.lang.System.exit;
 
 public class FossilExtractorBlockEntity extends BlockEntity implements MenuProvider {
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -201,10 +201,9 @@ public class FossilExtractorBlockEntity extends BlockEntity implements MenuProvi
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack itemStack) {
-        return inventory.getItem(2).getItem() == itemStack.getItem() || inventory.getItem(2).isEmpty();
-    }
+        return (inventory.getItem(2).getItem() == itemStack.getItem() || inventory.getItem(2).isEmpty());    }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(2).getMaxStackSize() > inventory.getItem(2).getCount();
+        return (inventory.getItem(2).getMaxStackSize() > inventory.getItem(2).getCount());
     }
 }

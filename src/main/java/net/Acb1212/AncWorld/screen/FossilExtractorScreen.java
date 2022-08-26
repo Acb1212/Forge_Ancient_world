@@ -9,6 +9,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
+/*
+N/A
+
+ */
+
+
 public class FossilExtractorScreen extends AbstractContainerScreen<FossilExtractorMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(AncWorld.MOD_ID,"textures/gui/fossil_extractor_gui.png");
