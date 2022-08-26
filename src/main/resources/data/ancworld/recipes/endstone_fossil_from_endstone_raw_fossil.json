@@ -1,0 +1,11 @@
+{
+  "type": "ancworld:fossil_extracting",
+  "ingredients": [
+    {
+      "item": "ancworld:endstone_raw_fossil"
+    }
+  ],
+  "output": {
+    "item": "ancworld:endstone_fossil"
+  }
+}

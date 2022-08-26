@@ -25,7 +25,7 @@ public class FossilExtractorMenu extends AbstractContainerMenu {
 
     public FossilExtractorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.FOSSIL_EXTRACTOR_MENU.get(),id);
-        checkContainerSize(inv, 3);
+        checkContainerSize(inv, 4);
         blockEntity = (FossilExtractorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -38,7 +38,6 @@ public class FossilExtractorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler,0,19,21));
             this.addSlot(new SlotItemHandler(handler,1,49,34));
             this.addSlot(new SlotItemHandler(handler,2,109,34));
-
         });
 
         addDataSlots(data);

@@ -27,7 +27,7 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERRACK_FOSSIL = ITEMS.register("netherrack_fossil", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOSSIL_TAB)));
     public static final RegistryObject<Item> GLACIAL_RAW_FOSSIL = ITEMS.register("glacial_raw_fossil", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOSSIL_TAB)));
     public static final RegistryObject<Item> GLACIAL_FOSSIL = ITEMS.register("glacial_fossil", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.FOSSIL_TAB)));
-    public static final RegistryObject<Item> FOSSIL_BRUSH = ITEMS.register("fossil_brush", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MISC_TAB).durability(255).stacksTo(1)));
+    public static final RegistryObject<Item> FOSSIL_BRUSH = ITEMS.register("fossil_brush", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.MISC_TAB).durability(255)));
 
 
 

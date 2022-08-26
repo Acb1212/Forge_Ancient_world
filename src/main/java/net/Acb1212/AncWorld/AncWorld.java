@@ -5,6 +5,7 @@ import net.Acb1212.AncWorld.block.ModBlocks;
 import net.Acb1212.AncWorld.block.entity.ModBlockEntities;
 import net.Acb1212.AncWorld.item.ModCreativeModeTab;
 import net.Acb1212.AncWorld.item.ModItems;
+import net.Acb1212.AncWorld.recipe.ModRecipes;
 import net.Acb1212.AncWorld.screen.FossilExtractorScreen;
 import net.Acb1212.AncWorld.screen.ModMenuTypes;
 import net.Acb1212.AncWorld.world.feature.ModConfiguredFeatures;
@@ -45,6 +46,7 @@ public class AncWorld
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModRecipes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

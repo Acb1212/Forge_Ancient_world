@@ -1,6 +1,7 @@
 package net.Acb1212.AncWorld.block.entity;
 
 import net.Acb1212.AncWorld.item.ModItems;
+import net.Acb1212.AncWorld.recipe.FossilExtractorRecipe;
 import net.Acb1212.AncWorld.screen.FossilExtractorMenu;
 
 
@@ -8,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 
@@ -17,6 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,6 +29,8 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 import static java.lang.System.exit;
 
@@ -43,7 +48,7 @@ public class FossilExtractorBlockEntity extends BlockEntity implements MenuProvi
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 780;
+    private int maxProgress = 78;
 
 
     public FossilExtractorBlockEntity(BlockPos pos, BlockState blockState) {
@@ -123,7 +128,7 @@ public class FossilExtractorBlockEntity extends BlockEntity implements MenuProvi
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i=0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(1,itemHandler.getStackInSlot(1));
+            inventory.setItem(i,itemHandler.getStackInSlot(i));
 
         }
         Containers.dropContents(this.level,this.worldPosition, inventory);
@@ -157,11 +162,20 @@ public class FossilExtractorBlockEntity extends BlockEntity implements MenuProvi
     }
 
     private static void craftItem(FossilExtractorBlockEntity entity) {
-        exit(0);
-            if(hasRecipe(entity)) {
-                entity.itemHandler.extractItem(1,1,false);
-                entity.itemHandler.setStackInSlot(2,new ItemStack(ModItems.SANDSTONE_FOSSIL.get(),entity.itemHandler.getStackInSlot(2).getCount()+1));
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i< entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
 
+        Optional<FossilExtractorRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(FossilExtractorRecipe.Type.INSTANCE, inventory, level);
+
+
+            if(hasRecipe(entity)) {
+                entity.itemHandler.getStackInSlot(0).hurt(1,level.getRandom(),(ServerPlayer)null );
+                entity.itemHandler.extractItem(1,1,false);
+                entity.itemHandler.setStackInSlot(2,new ItemStack(recipe.get().getResultItem().getItem(),entity.itemHandler.getStackInSlot(2).getCount()+1));
                 entity.resetProgress();
             }
 
@@ -169,17 +183,19 @@ public class FossilExtractorBlockEntity extends BlockEntity implements MenuProvi
 
 
     private static boolean hasRecipe(FossilExtractorBlockEntity entity) {
+        Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
 
         for (int i = 0; i< entity.itemHandler.getSlots(); i++) {
         inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
+        Optional<FossilExtractorRecipe> recipe = level.getRecipeManager().getRecipeFor(FossilExtractorRecipe.Type.INSTANCE, inventory,level);
+
+
         boolean hasToolInZeroSlot = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.FOSSIL_BRUSH.get();
-        boolean hasFossilInFirstSlot = entity.itemHandler.getStackInSlot(1).getItem()==ModItems.SANDSTONE_RAW_FOSSIL.get();
 
-
-        return hasFossilInFirstSlot && hasToolInZeroSlot && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, new ItemStack(ModItems.SANDSTONE_FOSSIL.get(),1));
+        return recipe.isPresent() && hasToolInZeroSlot && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
 
 
     }

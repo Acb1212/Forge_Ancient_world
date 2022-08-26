@@ -43,7 +43,7 @@ public class FossilExtractorBlock extends BaseEntityBlock{
 
 
         }
-            onRemove(state,level,pos,state1,b);
+        super.onRemove(state,level,pos,state1,b);
     }
 
     @Override

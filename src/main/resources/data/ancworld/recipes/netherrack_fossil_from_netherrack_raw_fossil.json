@@ -1,0 +1,11 @@
+{
+  "type": "ancworld:fossil_extracting",
+  "ingredients": [
+    {
+      "item": "ancworld:netherrack_raw_fossil"
+    }
+  ],
+  "output": {
+    "item": "ancworld:netherrack_fossil"
+  }
+}

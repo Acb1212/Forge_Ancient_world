@@ -1,0 +1,11 @@
+{
+  "type": "ancworld:fossil_extracting",
+  "ingredients": [
+    {
+      "item": "ancworld:glacial_raw_fossil"
+    }
+  ],
+  "output": {
+    "item": "ancworld:glacial_fossil"
+  }
+}
